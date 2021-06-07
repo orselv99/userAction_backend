@@ -15,5 +15,13 @@
             "ip": "localhost",
             "port": "30003"
         }
+    ],
+    "database": [
+        {
+            "name": "mongo1",
+            "user": "test",
+            "password": "aaaa",
+            "connectString": "mongodb://localhost:27017/test"
+        }
     ]
 }

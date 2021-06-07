@@ -1,6 +1,6 @@
-const config = require('./servers/config');
-const admin = require('./servers/admin');
-const client = require('./servers/socket');
+const config = require('./sources/config');
+const admin = require('./sources/rule');
+const client = require('./sources/socket');
 
 admin(config);
 client(config);
