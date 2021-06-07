@@ -1,0 +1,19 @@
+{
+    "server": [
+        {
+            "name": "http",
+            "ip": "localhost",
+            "port": "30001"
+        },
+        {
+            "name": "tcp",
+            "ip": "localhost",
+            "port": "30002"
+        },
+        {
+            "name": "udp",
+            "ip": "localhost",
+            "port": "30003"
+        }
+    ]
+}
