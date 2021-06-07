@@ -1,5 +1,5 @@
 // 환경설정
-const env = require('./environmets');
+const env = require('../servers/config');
 const info = env.getServerInfo('tcp');
 
 // 서버
