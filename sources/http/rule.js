@@ -10,16 +10,23 @@ module.exports = (config) => {
 
         console.log(`Connect to database! uri: ${uri}`);
     });
-    const rule = require('./models/rule');
-
-    //
+    // rule
+    const rule = require('../models/rule');
+    // server
     const serverConfig = config.getServerConfig('http');
     const express = require('express');
     const listener = express();
     const http = require('http');
 
-    listener.get('/', (request, response) => {
+    listener.get('/admin', (request, response) => {
         console.log('Someone is connected!');
+
+        response.send('get admin');
+        return;
+        // 일단, html 로 정책입력쪽 만들기 >> react.js 로 변경
+    });
+    listener.put('/something1', (request, response) => {
+        //
         rule.find((error, data) => {
             if (error) {
                 console.log(error);
@@ -27,18 +34,16 @@ module.exports = (config) => {
             }
 
             response.send(data);
+            return;
         });
-
-        // 일단, html 로 정책입력쪽 만들기 >> react.js 로 변경
-    });
-    listener.put('/something1', (request, response) => {
-        //
     });
     listener.post('/something2', (request, response) => {
-        //
+        response.send('post something2');
+        return;
     });
     listener.delete('/something3', (request, response) => {
-        //
+        response.send('delete something3');
+        return;
     });
 
     http.createServer(listener).listen(serverConfig.port, () => {

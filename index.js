@@ -1,6 +1,6 @@
 const config = require('./sources/config');
-const admin = require('./sources/rule');
-const client = require('./sources/socket');
+const rule = require('./sources/http/rule');
+const client = require('./sources/socket/userData');
 
-admin(config);
+rule(config);
 client(config);

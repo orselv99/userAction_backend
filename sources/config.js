@@ -27,11 +27,11 @@ exports.getDBConfig = (name) => {
         connectString: ''
     };
 
-    for (let i = 0; i < info.database.length; i++) {
-        if (info.database[i].name === name) {
-            result.user = info.database[i].user;
-            result.password = info.database[i].password;
-            result.connectString = info.database[i].connectString;
+    for (let i = 0; i < info.db.length; i++) {
+        if (info.db[i].name === name) {
+            result.user = info.db[i].user;
+            result.password = info.db[i].password;
+            result.connectString = info.db[i].connectString;
         }
     }
 

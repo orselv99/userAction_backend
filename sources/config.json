@@ -16,7 +16,7 @@
             "port": "30003"
         }
     ],
-    "database": [
+    "db": [
         {
             "name": "mongo1",
             "user": "test",
