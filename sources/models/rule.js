@@ -28,3 +28,5 @@ const schema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('rule', schema);
+
+// TODO: 일단 간단하게 html 로 정책입력 페이지 생성하자

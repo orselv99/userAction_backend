@@ -1,3 +1,5 @@
+const { exception } = require('console');
+
 module.exports = (config) => {
     const serverConfig = config.getServerConfig('tcp');
     const net = require('net');
@@ -28,6 +30,14 @@ module.exports = (config) => {
                     case 1:
                         console.log('request upload user data.');
                         // TODO: 클라이언트에서 전달해온 데이터를 파일로 저장
+                        if (request.param == null) {
+                            throw exception('Request parameter is null.');
+                        }
+
+                        // request data 형태
+                        // 사용자이름으로 unique 한 파일명
+                        // 파일크기
+                        // 실제 데이터
                         break;
                 }
             }
