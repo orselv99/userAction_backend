@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = (config) => {
     // db
     const db = require('mongoose');
@@ -17,12 +19,12 @@ module.exports = (config) => {
     const express = require('express');
     const listener = express();
     const http = require('http');
+    const fs = require('fs');
 
     listener.get('/admin', (request, response) => {
         console.log('Someone is connected!');
-
-        response.send('get admin');
-        return;
+        response.writeHead(200, { "Context-Type": "text/html" });
+        fs.createReadStream(path.resolve(__dirname, 'rule.html')).pipe(response);
         // 일단, html 로 정책입력쪽 만들기 >> react.js 로 변경
     });
     listener.put('/something1', (request, response) => {
