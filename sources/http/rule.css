@@ -17,12 +17,22 @@
 }
 
 .mid {
+    display: flex;
+}
+.midLeft {
+    width: 30%;
     background-color: lightblue;
 }
-.rules {
-    background-color: lightblue;
+.midCenter {
+    width: 50%;
+    background-color: lightslategrey;
+}
+.midRight {
+    width: 50%;
+    background-color: lightskyblue;
 }
 
 .bot {
+    display: flex;
     background-color: lightgreen;
 }
