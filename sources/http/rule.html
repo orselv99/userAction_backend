@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div>
+    <div class="base">
         <!-- top -->
         <div class="top">
             <script>
@@ -19,18 +19,33 @@
                 }
             </script>
             <div class="headline">
-                행태분석 정책 관리
+                <h3>행태분석 정책 관리</h3>
                 <button class="buttonStore" onClick="storeRule()">저장</button>
             </div>
         </div>
         <!-- mid 좌측 -->
         <div class="mid">
-            감시주기 설정<br>
-            서버 재연결 설정<br>
-            자리비움 감지<br>
-            프로세스 감지<br>
-            파일IO 감지<br>
-            프린트 출력 감지<br>
+            <div class="rules">
+                <h4>주기 설정</h4>
+                    <li>감시 주기</li>
+                    <li>서버재연결 주기</li>
+                <h4>자리비움 감지</h4>
+                    <li>사용</li>
+                    <li>자리비움 시작 시간</li>
+                    <li>자리비움 해제 최소대기 시간</li>
+                <h4>프로세스 감지</h4>
+                    <li>사용</li>
+                    <li>브라우저 프로세스 정의</li>
+                    <li>감시예외 프로세스 정의</li>
+                    <li>사생활보호 프로세스 정의</li>
+                    <li>캡션 중복방지 프로세스 정의</li>
+                <h4>파일IO 감지</h4>
+                    <li>사용</li>
+                    <li>감시예외 경로 정의</li>
+                    <li>감시대상 확장명 정의</li>
+                <h4>프린트 출력 감지</h4>
+                    <li>사용</li>
+            </div>
         </div>
         <!-- mid 우측 -->
         <div>
@@ -38,7 +53,7 @@
         </div>
         <!-- bot -->
         <div class="bot">
-            상태 표시줄
+            <h4>상태 표시줄</h4>
         </div>
     </div>
 

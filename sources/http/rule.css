@@ -1,6 +1,9 @@
 .top {
     background-color: lightsalmon;
 }
+.base {
+    padding: 0 20px;
+}
 .headline {
     display: flex;
     align-items: center;
@@ -14,6 +17,9 @@
 }
 
 .mid {
+    background-color: lightblue;
+}
+.rules {
     background-color: lightblue;
 }
 
