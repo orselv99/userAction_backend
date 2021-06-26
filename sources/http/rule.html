@@ -5,17 +5,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="rule.css">
+    <title>정책설정</title>
 </head>
 
 <body>
-    <div id="app">
+    <div>
         <!-- top -->
-        <div id="top">
-
+        <div class="top">
+            <script>
+                function storeRule() {
+                    alert("저장 되었습니다.");
+                }
+            </script>
+            <div class="headline">
+                행태분석 정책 관리
+                <button class="buttonStore" onClick="storeRule()">저장</button>
+            </div>
         </div>
         <!-- mid 좌측 -->
-        <div>
+        <div class="mid">
             감시주기 설정<br>
             서버 재연결 설정<br>
             자리비움 감지<br>
@@ -28,10 +37,11 @@
 
         </div>
         <!-- bot -->
-        <div>
-
+        <div class="bot">
+            상태 표시줄
         </div>
     </div>
+
 </body>
 
 </html>

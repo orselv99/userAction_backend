@@ -1,0 +1,22 @@
+.top {
+    background-color: lightsalmon;
+}
+.headline {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding: 0 20px;
+}
+.buttonStore {
+    height: 36px;
+    margin-left: auto;
+    padding: 0 36px;
+}
+
+.mid {
+    background-color: lightblue;
+}
+
+.bot {
+    background-color: lightgreen;
+}
