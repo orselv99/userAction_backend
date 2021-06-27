@@ -1,19 +1,18 @@
 const path = require('path');
 
 module.exports = (config) => {
-    // db
-    const db = require('mongoose');
-    const uri = config.getDBConfig('mongo1').connectString;
-    db.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
-        if (error) {
-            console.log(error);
-            return;
-        }
-
-        console.log(`Connect to database! uri: ${uri}`);
-    });
-    // rule
-    const rule = require('../models/rule');
+    // // db
+    // const db = require('mongoose');
+    // const uri = config.getDBConfig('mongo1').connectString;
+    // db.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true }, (error) => {
+    //     if (error) {
+    //         console.log(error);
+    //         return;
+    //     }
+    //     console.log(`Connect to database! uri: ${uri}`);
+    // });
+    // // rule
+    // const rule = require('../models/rule');
     // server
     const serverConfig = config.getServerConfig('http');
     const express = require('express');
@@ -52,3 +51,5 @@ module.exports = (config) => {
         console.log(`${serverConfig.ip}:${serverConfig.port} is running.`);
     });
 }
+
+exports.RULEPATH = require('path').resolve(__dirname, 'rule.json');

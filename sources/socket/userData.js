@@ -1,4 +1,5 @@
 const { exception } = require('console');
+const { RULEPATH } = require('../http/rule/rule');
 
 module.exports = (config) => {
     const serverConfig = config.getServerConfig('tcp');
@@ -7,7 +8,7 @@ module.exports = (config) => {
     const fs = require('fs');
     const path = require("path");
 
-    // TODO: 저 debug 로그들 함수형태로 정리해보자
+
 
     server.listen(serverConfig.port, () => {
         console.log(`${serverConfig.ip}:${serverConfig.port} is running.`);
@@ -24,7 +25,7 @@ module.exports = (config) => {
                         console.log('request download rule.');
 
                         // 생성된 최근정책을 읽어서 전달
-                        let result = fs.readFileSync(path.resolve(__dirname, 'latestRule.json'));
+                        let result = fs.readFileSync(RULEPATH);
                         socket.write(result);
                         break;
                     case 1:
