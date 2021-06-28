@@ -9,11 +9,6 @@
             "name": "tcp",
             "ip": "localhost",
             "port": "30002"
-        },
-        {
-            "name": "udp",
-            "ip": "localhost",
-            "port": "30003"
         }
     ],
     "db": [

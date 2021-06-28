@@ -7,50 +7,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="rule.css">
     <title>정책설정</title>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
 </head>
 
 <body>
     <div class="base">
         <!-- top -->
         <div class="top">
-            <script>
-                function storeRule() {
-                    alert("저장 되었습니다.");
-                }
-            </script>
+
             <div class="headline">
                 <h3>행태분석 정책 관리</h3>
-                <button class="buttonStore" onClick="storeRule()">저장</button>
+                <!-- <script>
+                    function storeRule() {
+                        let httpRequest = new XMLHttpRequest();
+                        httpRequest.open('PUT', 'storeRule');
+                        httpRequest.send();
+                    };
+                </script>
+                <button onclick='storeRule()'>저장</button> -->
+                <script>
+                    function storeRule() {
+                        alert('debug');
+                        $.ajax({
+                            url: 'localhost:30001/getRuleData',
+                            dataType: 'json',
+                            type: 'POST',
+                            data: { 'msg': $('#msg').val() },
+                            success: (result) => {
+                                if (result['result'] == true) {
+                                    $('#result').html(result['msg']);
+                                }
+                                else {
+                                    alert('ERROR');
+                                }
+                            }
+                        })
+                    }
+                </script>
+                <button id="buttonStore" onclick="storeRule()">저장</button>
             </div>
         </div>
         <!-- mid 좌측 -->
         <div class="mid">
             <div class="midLeft">
                 <h4>주기 설정</h4>
-                    <li>감시 주기</li>
-                    <li>서버재연결 주기</li>
+                <li>
+                    감시 주기 :
+                    <input type="number" style="text-align: right;" value="250"> (ms)
+                </li>
+                <li>
+                    서버재연결 주기 :
+                    <input type="number" style="text-align: right;" value="600000"> (ms)
+                </li>
                 <h4>자리비움 감지</h4>
-                    <li>사용</li>
-                    <li>자리비움 시작 시간</li>
-                    <li>자리비움 해제 최소대기 시간</li>
+                <li>
+                    사용
+                    <input type="checkbox" disabled checked>
+                </li>
+                <li>
+                    자리비움 시작 시간 :
+                    <input type="number" style="text-align: right;" value="5000"> (ms)
+                </li>
+                <li>
+                    자리비움 해제 최소대기 시간 :
+                    <input type="number" style="text-align: right;" value="3000"> (ms)
+                </li>
                 <h4>프로세스 감지</h4>
-                    <li>사용</li>
-                    <li>브라우저 프로세스 정의</li>
-                    <li>감시예외 프로세스 정의</li>
-                    <li>사생활보호 프로세스 정의</li>
-                    <li>캡션 중복방지 프로세스 정의</li>
+                <li>
+                    사용
+                    <input type="checkbox" checked>
+                </li>
+                <details>
+                    <summary>브라우저 프로세스 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>감시예외 프로세스 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>사생활보호 프로세스 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>캡션 중복방지 프로세스 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
                 <h4>파일IO 감지</h4>
-                    <li>사용</li>
-                    <li>감시예외 경로 정의</li>
-                    <li>감시대상 확장명 정의</li>
+                <li>
+                    사용
+                    <input type="checkbox" checked>
+                </li>
+                <details>
+                    <summary>감시예외 경로 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>감시대상 확장명 정의</summary>
+                    <ul data-role="listview" data-theme="g">
+                        <li>aaa</li>
+                        <li>bbb</li>
+                        <li>ccc</li>
+                        <li>ddd</li>
+                    </ul>
+                </details>
                 <h4>프린트 출력 감지</h4>
-                    <li>사용</li>
+                <li>
+                    사용
+                    <input type="checkbox" checked>
+                </li>
             </div>
             <div class="midCenter">
-                inputs
             </div>
             <div class="midRight">
-                result
             </div>
         </div>
         <!-- mid 우측 -->

@@ -1,61 +1,60 @@
-{
-    "timerInterval": 250,
-    "serverRetryInterval": 600000,
-    "features": {
-        "afk": {
-            "enabled": true,
-            "in": 5000,
-            "awake": 3000
-        },
-        "process": {
-            "enabled": true,
-            "excludes": [
-                "explorer.exe",
-                "*host.exe",
-                "*broker.exe",
-                "taskmgr.exe",
-                "debugview.exe",
-                "baretail.exe",
-                "lockapp.exe",
-                "searchapp.exe"
-            ],
-            "browsers": [
-                "chrome.exe",
-                "msedge.exe",
-                "iexplore.exe",
-                "whale.exe",
-                "filefox.exe",
-                "opera.exe"
-            ],
-            "privates": [
-                "kakaotalk.exe"
-            ],
-            "preventCaptionDuplicate": [
-                "bandizip.exe"
-            ]
-        },
-        "fileIo": {
-            "enabled": true,
-            "excludes": [
-                "*\\$*",
-                "*\\program files*",
-                "*\\windows\\*",
-                "*\\users\\*",
-                "*\\system volume information\\*",
-                "*\\.userAction\\*"
-            ],
-            "extensions": [
-                ".log*",
-                ".txt*",
-                ".ppt*",
-                ".doc*",
-                ".xls*",
-                ".htm*",
-                ".iso*"
-            ]
-        },
-        "print": {
-            "enabled": true
-        }
+"timerInterval": 250,
+"serverRetryInterval": 600000,
+"features": {
+    "afk": {
+        "enabled": true,
+        "in": 5000,
+        "awake": 3000
+    },
+    "process": {
+        "enabled": true,
+        "excludes": [
+            "explorer.exe",
+            "*host.exe",
+            "*broker.exe",
+            "taskmgr.exe",
+            "debugview.exe",
+            "baretail.exe",
+            "lockapp.exe",
+            "searchapp.exe"
+        ],
+        "browsers": [
+            "chrome.exe",
+            "msedge.exe",
+            "iexplore.exe",
+            "whale.exe",
+            "filefox.exe",
+            "opera.exe"
+        ],
+        "privates": [
+            "kakaotalk.exe"
+        ],
+        "preventCaptionDuplicate": [
+            "bandizip.exe"
+        ]
+    },
+    "fileIo": {
+        "enabled": true,
+        "excludes": [
+            "*\\$*",
+            "*\\program files*",
+            "*\\windows\\*",
+            "*\\users\\*",
+            "*\\system volume information\\*",
+            "*\\.userAction\\*"
+        ],
+        "extensions": [
+            ".log*",
+            ".txt*",
+            ".ppt*",
+            ".doc*",
+            ".xls*",
+            ".htm*",
+            ".iso*"
+        ]
+    },
+    "print": {
+        "enabled": true
     }
+}
 }

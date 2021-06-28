@@ -12,7 +12,6 @@ exports.getServerConfig = (name) => {
         if (info.server[i].name === name) {
             result.ip = info.server[i].ip;
             result.port = info.server[i].port;
-            //console.log(`${ip}:${port}`);
             break;
         }
     }
