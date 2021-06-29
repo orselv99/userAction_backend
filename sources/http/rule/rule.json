@@ -1,60 +1,61 @@
-"timerInterval": 250,
-"serverRetryInterval": 600000,
-"features": {
-    "afk": {
+{
+    "timerInterval": 250,
+    "serverRetryInterval": 600000,
+    "features": {
+      "afk": {
         "enabled": true,
         "in": 5000,
         "awake": 3000
-    },
-    "process": {
+      },
+      "process": {
         "enabled": true,
         "excludes": [
-            "explorer.exe",
-            "*host.exe",
-            "*broker.exe",
-            "taskmgr.exe",
-            "debugview.exe",
-            "baretail.exe",
-            "lockapp.exe",
-            "searchapp.exe"
+          "explorer.exe",
+          "*host.exe",
+          "*broker.exe",
+          "taskmgr.exe",
+          "debugview.exe",
+          "baretail.exe",
+          "lockapp.exe",
+          "searchapp.exe"
         ],
         "browsers": [
-            "chrome.exe",
-            "msedge.exe",
-            "iexplore.exe",
-            "whale.exe",
-            "filefox.exe",
-            "opera.exe"
+          "chrome.exe",
+          "msedge.exe",
+          "iexplore.exe",
+          "whale.exe",
+          "filefox.exe",
+          "opera.exe"
         ],
         "privates": [
-            "kakaotalk.exe"
+          "kakaotalk.exe"
         ],
         "preventCaptionDuplicate": [
-            "bandizip.exe"
+          "bandizip.exe"
         ]
-    },
-    "fileIo": {
+      },
+      "fileIo": {
         "enabled": true,
         "excludes": [
-            "*\\$*",
-            "*\\program files*",
-            "*\\windows\\*",
-            "*\\users\\*",
-            "*\\system volume information\\*",
-            "*\\.userAction\\*"
+          "*\\$*",
+          "*\\program files*",
+          "*\\windows\\*",
+          "*\\users\\*",
+          "*\\system volume information\\*",
+          "*\\.userAction\\*"
         ],
         "extensions": [
-            ".log*",
-            ".txt*",
-            ".ppt*",
-            ".doc*",
-            ".xls*",
-            ".htm*",
-            ".iso*"
+          ".log*",
+          ".txt*",
+          ".ppt*",
+          ".doc*",
+          ".xls*",
+          ".htm*",
+          ".iso*"
         ]
-    },
-    "print": {
+      },
+      "print": {
         "enabled": true
+      }
     }
-}
-}
+  }

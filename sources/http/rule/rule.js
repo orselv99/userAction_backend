@@ -12,18 +12,20 @@ module.exports = (config) => {
     const listener = express();
     const http = require('http');
     const fs = require('fs');
+    const cors = require('cors');
+    listener.use(cors());
 
     listener.get('/admin', (request, response) => {
         response.writeHead(200, { "Context-Type": "text/html" });
         fs.createReadStream(path.resolve(__dirname, 'rule.html')).pipe(response);
     });
     listener.put('/storeRule', (request, response) => {
-
         response.send('something1-OK');
     });
-    listener.post('/getRuleData', (request, response) => {
-        response.send('post something2');
-        return;
+    listener.get('/getRule', (request, response) => {
+        console.log(`request: ${request.ip}`);
+        const data = fs.readFileSync(this.RULEPATH);
+        response.json(JSON.parse(data));
     });
     listener.delete('/something3', (request, response) => {
         response.send('delete something3');
